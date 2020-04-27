@@ -1,0 +1,141 @@
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+title: Jaebeom's Blog
+subtitle: '재범의 블로그'
+description: '재범의 기술 블로그 입니다.' 
+keywords: jb log, jblog, 재범 개발 블로그, 재범 개발 로그, 고재범 블로그, 재범 블로그, jaebeom blog, programming, java, javascript, nodejs, hexo, github, piano
+email: const.gjb@gmail.com
+author: JaeBeom Go
+language: ko
+timezone: 'Asia/Seoul'
+
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+url: http://gojaebeom.github.io
+root: /
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+pretty_urls:
+  trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
+  trailing_html: true # Set to false to remove trailing '.html' from permalinks
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link:
+  enable: true # Open external links in new tab
+  field: site # Apply to the whole site
+  exclude: ''
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace: ''
+  wrap: true
+  hljs: false
+
+# Home page setting
+# path: Root path for your blogs index page. (default = '')
+# per_page: Posts displayed per page. (0 = disable pagination)
+# order_by: Posts order. (Order by date descending by default)
+index_generator:
+  path: ''
+  per_page: 5
+  order_by: -date
+
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Metadata elements
+## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
+meta_generator: true
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+## Use post's date for updated date unless set in front-matter
+use_date_for_updated: false
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 10
+pagination_dir: page
+
+# Include / Exclude file(s)
+## include:/exclude: options only apply to the 'source/' folder
+include:
+exclude:
+ignore:
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: icarus
+
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  repo: https://github.com/gojaebeom/gojaebeom.github.io.git
+  branch: master
+
+# 이 플러그인은 rel="external nofollow"속성을 자동으로 추가하여 외부 링크 크롤링을 막아준다!
+# hexo-autonofollow
+nofollow:
+    enable: true
+    exclude:
+    - exclude1.com
+    - exclude2.com
+
+# 이 플러그인은 더욱 효율적으로 크롤링 할 수 있도록 사이트맵 xml 파일을 자동으로 생생해줍니다!
+# hexo-generator-seo-friendly-sitemap
+# sitemap auto generator
+sitemap:
+    path: sitemap.xml
+
+# hexo-generator-feed
+# RSS 피드를 만들어서 일종의 블로그 구독기능을 만들어주는데요!
+# rss feed auto generator
+feed:
+  type: rss2
+  path: rss2.xml
+  limit: 20
+
+# hexo-generator-robotstxt
+# 자동으로 robot.txt 파일을 생성해주는 플러그인 입니다.
+robotstxt:
+  useragent: "*"
+  allow:
+    - /
+  sitemap: https://gojaebeom.github.io/sitemap.xml
+
+
+# hexo-asset-link
+# 이 플러그인은 필수템입니다.
+# 포스트의 md파일이 있는곳에 포스트의 이름과 동일한 폴더를 만들고 이미지를 넣으면
+# 그러면 이제 이미지에 접근할때 ![이미지 설명](Test-Image.png) 으로 간단하게 접근이 가능해집니다!
+# 자세한 설명은 https://www.npmjs.com/package/hexo-asset-link 에서 확인할 수 있습니다!

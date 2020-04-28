@@ -39,7 +39,7 @@ public class this를_이용한_생성자호출 {
 
 }
 
-class Person02{
+class Person{
 	
 	Person(){
 		System.out.println("생성자 1");

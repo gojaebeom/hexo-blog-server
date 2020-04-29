@@ -33,7 +33,7 @@ sidebar:
 
 다음 예제를 보자
 ```java
-public static void mina(String[] args) {
+public static void main(String[] args) {
     
     final int MAX_SIZE = 100;
     final char CONST_CHAR = '상';
@@ -47,13 +47,13 @@ public static void mina(String[] args) {
 ```
 위의 예제에서는 다음과 같이 변수의 선언에 final을 추가하였다. 따라서 이 변수는 값의 변경이 불가능한 상수가 된다. CONST_ASSIGNED처럼 선언만해놓았다면 딱 한번 값을 할당할 수 있다. 물론 그이후로는 불가능 하다.
 
-**상수의_관례**
+**상수의 관례**
 그리고 위와같이 관례상 상수의 이름은 다음 두가지 사항을 지켜서 짓는다.
 - 상수의 이름은 모두 대문자로 짓는다.
 - 이름이 둘 이상의 단어로 이뤄질 경우 단어 사이에 언더바를 넣는다.
 		
 ## 리터럴 상수에 대한 이해
-다음 예제를 보자
+다음 예제를 보자.
 ```java
 int num = 157;
 ```

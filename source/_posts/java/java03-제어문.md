@@ -188,6 +188,7 @@ public static void main(String[] args) {
 2. 반복 조건이 true인지 확인
 3. 반복 영역을 실행 (반복 조건이 true이면)
 4. 변수의 값 증가
+
 그리고 그 이후 두번째 반복부터는 첫번째 조건인 변수의 선언및 초기화 부분은 지나치게 된다. 
 
 ### break 와 continue

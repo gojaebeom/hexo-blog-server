@@ -117,7 +117,7 @@ public static void main(String[] args){
 }
 ```
 
-Person 클래스의 맴버변수에 바로 접근하여 값을 할당하고 출력하는 모습을 볼 수 있다. 이는 작성자의 의도와 잘못된 방향으로 사용이 되고있다. 위의 경우 치명적인 문제가 생길 일은 없지만, 맴버변수 name을 위해 정의한 setName, getName 메소드가 불필요하게 되어버렸다. 이렇게 작성자의 의도와는 반대로 사용이 되어지는 것을 막기위해 우리는 정보를 은닉할 필요가 있다. 사실 위의 예제로는 정보은닉의 필요성을 못 느낄 수 도 있다. 그렇다면 내용을 추가해보자.
+Person 클래스의 맴버변수에 바로 접근하여 값을 할당하고 출력하는 모습을 볼 수 있다. 이는 작성자의 의도와 다르게 잘못된 방향으로 사용이 되고있다. 위의 경우 치명적인 문제가 생길 일은 없지만, 맴버변수 name을 위해 정의한 setName, getName 메소드가 불필요하게 되어버렸다. 이렇게 작성자의 의도와는 반대로 사용이 되어지는 것을 막기위해 우리는 정보를 은닉할 필요가 있다. 사실 위의 예제로는 정보은닉의 필요성을 못 느낄 수 도 있다. 그렇다면 내용을 추가해보자.
 
 ```java
 class Person{
@@ -141,9 +141,9 @@ Person 클래스에 몸무게라는 속성을 추가하였다. 그리고 setWeig
 ```java
 class Person{
   private String name;
-  private int weight;
+  private double weight;
   
-  public void setWeight(int weight){
+  public void setWeight(double weight){
     if(weight <= 0){
       System.out.println("몸무게는 0보다 작거나 같을 수 없습니다! 다시 입력해주세요");
       return;
@@ -151,7 +151,7 @@ class Person{
     this.weight = weight;
   }
 
-  public int getWeight(){
+  public double getWeight(){
     return weight;
   }
 }
@@ -164,13 +164,14 @@ class Person{
 
 ```java
 class Phone{
-  
-  private int pId;//고유번호
-  private String pName;//폰의 기종 이름
 
-  public phone(int pId, pName){//객체를 생성시 기본정보를 기입받는 생성자
-    this.pId = pId;
-    this.pName = pName;
+  private int IMEI;//고유번호
+  private String model;//폰의 기종 이름
+
+  //객체를 생성시 기본정보를 기입받는 생성자
+  public Phone(int IMEI, String model){
+    this.IMEI = IMEI;
+    this.model = model;
   }
 
   public void call(){
@@ -184,122 +185,117 @@ class Phone{
 
 public class Test{
   public static void main(String[] args){
-    Phone myPhone = new Phone(123456, "폴더폰");
+    Phone myPhone = new Phone(000000, "모토로라");
   }
 }
 ```
-위의 예제는 Phone에 대한 클래스의 정의이다. 이 클래스는 외부에서 잘 사용되어 지고 있다. 하지만 시대가 변함에 따라 스마트 폰이 나오고 Phone 클래스에도 새로운 기능들을 넣으려고 한다. 만약 Phone의 클래스 내부의 값이나 메소드들의 로직을 직접 수정하게 되면 지금까지 Phone와 의존성이 있는 모든 클래스들을 다시 수정해야 한다. 예를 들어보자.
+
+위의 예제는 Phone에 대한 클래스의 정의이다. 이 클래스는 외부에서 잘 사용되어 지고 있다. 하지만 시대가 변함에 따라 스마트 폰이 나오고 Phone 클래스에도 새로운 기능들을 넣으려고 한다. 만약 Phone의 클래스 내부의 값이나 메소드들의 로직을 직접 수정하게 되면 지금까지 Phone 클래스와 의존성이 있는 모든 클래스들을 다시 수정해야 한다. 예를 들어보자.
 
 ```java
 class Phone{
-	private int pId;
-	private String pName;
-	private boolean wi_fi;//새로 추가된 속성, 와이파이 탑재여부
-	
-	public Phone(int pId, String pName, boolean wi_fi) {
-		this.pId = pId;
-		this.pName = pName;
-		this.wi_fi = wi_fi;
-	}
+  private int IMEI;
+  private String model;
+  private String OS; //새로 추가된 속성, 안드로이드 또는 ios 의 OS 탑재 가능
 
-  public void webSearch(){ //새로 추가된 메소드, 웹 검색을 할 수 있다.
-    //웹 검색
-    //하지만 기존의 phone에서는 불가능하기때문에 스마트폰이아니면 불필요한 메소드가 된다.
+  //객체 생성시 기본정보를 입력받는 생성자 
+  public Phone(int IMEI, String model, String OS){
+    this.IMEI = IMEI;
+    this.model = model;
+    this.OS = OS; 
   }
 
+  //새로 추가된 메소드, 웹 검색을 할 수 있다.
+  public void webSearch(){ 
+    //하지만 기존의 phone에서는 불가능하기때문에 스마트폰이아니면 불필요한 메소드가 된다.
+  }
 }
 
 public class Test {
-	
-	public static void main(String[] args) {
-		
-		Phone myPhone = new Phone(11222, "코비폰");//에러
-    //기존에 사용하던 생성자는 매개변수를 2개만 받았는데
-    //와이파이 탑재여부를 기입하는 매개변수가 추가되어 기존에 코드는 오류가난다.
-    //물론 메소드 오버로딩으로 기존의 생성자는 유지하고 새로 만들 수 도 있지만, 이 밖에도 추가되고 수정되어야 할것이 많다고 가정해보자.
-
-    //결국 다음과 같이 수정해야 한다.
-    Phone myPhone = new Phone(11222, "코비폰", false);
-	}
-
+  public static void main(String[] args) {
+      //Phone myPhone = new Phone(000000, "모토로라"); //에러
+      /*
+      * 기존에 사용하던 생성자는 매개변수를 2개만 받았는데
+      * OS의 종류까지 초기에 입력받는 것으로 수정되었다.
+      * 물론 메소드 오버로딩으로 기존의 생성자는 유지하고 새로운 생성자를 만들 수 도 있지만, 
+      * 이 밖에도 추가되고 수정되어야 할것이 많다고 가정해보자.
+      */
+      //결국 다음과 같이 수정해야 한다.
+      Phone myPhone = new Phone(000000, "모토로라", "OS 없음");
+  }
 }
 ```
 이렇듯 내부적인 코드의 변화로 인해 Phone과 의존성이 있는 클래스들은 모두 수정해야 한다. 하지만 기존의 Phone 클래스는 수정하지 않고 Phone의 기능을 상속받아 새로 SmartPhone이라는 클래스를 정의한다면 어떻게 될까. 예제를 통해 알아보자.
 
 ```java
 class Phone{
-	private int pId;
-	private String pName;
-	
-	public Phone(int pId, String pName) {//기존의 코드는 수정되지 않는다.
-		this.pId = pId;
-		this.pName = pName;
-	}
+  private int IMEI;
+  private String model;
+
+  public Phone(int IMEI, String model){
+    this.IMEI = IMEI;
+    this.model = model;
+  }
+  ...
 }
 
 class SmartPhone extends Phone{
-	
-	private boolean wi_fi;
 
-	public SmartPhone(int pId, String pName, boolean wi_fi) {
-		super(pId, pName);
-		
-		this.wi_fi = wi_fi;	
-	}
-	
-	public void webSearch() {
-		System.out.println("웹 검색");
-	}
-	
-	public void clickWiFi() {
-		System.out.println("와이파이를 끄거나 키기");
-	}
-	
+  private String OS;
+
+  public SmartPhone(int IMEI, String model, String OS){
+    super(IMEI, model);//부모 클래스 생성자에게 필요한 매개변수 전달
+    this.OS = OS;//추가적으로 OS 종류 전달
+  }
+
+  public void bluetooth() {
+    //블루투스
+  }
+
+  public void wiFi() {
+    //와이파이
+  }
 }
 
 public class Test {
-	
-	public static void main(String[] args) {
-		Phone myPhone = new Phone(11222, "코비폰");//기존 사용자는 손대지 않는다.
-		
-		SmartPhone yourPhone = new SmartPhone(123456, "스마트폰", true);// 새로 스마트폰을 사용하는 사용자만 바꾸어주면 된다.
-		yourPhone.webSearch();
-		
-	}
+  public static void main(String[] args) {
+    Phone myPhone = new Phone(000000, "모토로라");//기존 사용자는 손대지 않는다.
+
+    SmartPhone yourPhone = new SmartPhone(000001, "A90", "안드로이드");// 새로 스마트폰을 사용하는 사용자만 바꾸어주면 된다.
+    yourPhone.wiFi();
+  }
 }
 ```
-위의 예제와 같이 기존의 폰을 사용 사용하는 사람은 따로 변화를 주지 않아도되고, 새로 스마트폰을 쓰는 사람들만 SmartPhone 객체로 생성해주면 되는 것 이다. 이건 어디까지나 글쓴이가 생각하는 예제이다. 본인한테 맞는 방법으로 생각하는 것이 좋을 것 같다.
+위의 예제와 같이 기존의 폰을 사용 사용하는 사람은 따로 변화를 주지 않아도 되고, 새로 스마트폰을 쓰는 사람들만 SmartPhone 객체로 생성해주면 되는 것 이다. 이건 어디까지나 글쓴이가 생각하는 예제이다. 본인한테 맞는 방법으로 생각하는 것이 좋을 것 같다.
 
 ## 다형성
 객체 지향 언어에서 다형성이란 하나의 클래스나 메서드가 다양한 방식으로 동작이 가능 한 것을 의미한다. 다형성에는 오버로딩과 오버라이딩이 있다. 
-
-다른 특징들도 깊이 다루면 포스팅 하나로는 부족하지만 다형성종에서도 오버라이딩과 오버로딩에 대한 예제로 짧게 다루도록 하겠다.
 
 ### 오버라이딩(Overriding)
 상위 클래스에 정의된 메소드를 하위 클래스에서 다시 정의하는 행위를 가리켜 '메소드 오버라이딩' 이라 하는데, 여기서 말하는 오버라이딩은 '무효화 시키다'의 뜻으로 해석이 된다.
 
 ```java
 class A{
-	public void hello() {
-		System.out.println("hello A");
-	}
+  public void hello() {
+    System.out.println("hello A");
+  }
 }
 
 class B extends A{
-	public void hello() {
-		System.out.println("hello B");
-	}
+  public void hello() {
+    System.out.println("hello B");
+  }
 }
 
 public class Test{
-	public static void main(String[] args) {
-		A a = new A();
-		a.hello();
+  public static void main(String[] args) {
+    A a = new A();
+    a.hello();
 
-		A b = new B();//B는 A를 상속받기 때문에 B객체를 A타입의 참조변수가 참조할 수 있다.
+    A b = new B();//B는 A를 상속받기 때문에 B객체를 A타입의 참조변수가 참조할 수 있다.
     //B b = new B(); // 물론 이 방법도 가능하다.
-		b.hello();
-	}
+    b.hello();
+  }
 }
 ```
 위와 같이 A클래스를 B클래스가 상속 받으면서 기존의 A클래스에 있는 Hello 메소드를 B클래스에서 재정의 하였다. 메소드명을 바꾼다거나, 매개변수를 바꾼다거나, 반환형을 바꾼다는 개념이 아니다. 메소드 내부 로직을 바꾸는 것을 의미한다. 위의 상속의 개념에서 사용되는 overriding은 상속을 보다 편리하게 해주는 장점이 있다.

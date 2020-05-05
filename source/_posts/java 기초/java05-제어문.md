@@ -1,5 +1,5 @@
 ---
-title: JAVA - 03. 실행흐름의 컨트롤
+title: JAVA - 04. 제어문
 thumbnail: https://user-images.githubusercontent.com/62233873/78540149-aa58da80-782e-11ea-9754-33ae5e40ec43.jpg
 date: 2020-04-22 17:16:00
 tags: 
@@ -13,7 +13,7 @@ tags:
 - 반복문
 category:
 - 웹 개발
-- java
+- java 기초
 
 #카탈로그 생성 및 위치
 toc: true

@@ -1,6 +1,8 @@
+---
 title: JAVA - 06. 객체지향 프로그래밍과 클래스
 author: JaeBeom Go
 tags:
+  - 자바
   - 인스턴스
   - 객체
   - 클래스
@@ -10,7 +12,18 @@ tags:
 categories:
   - 웹 개발
   - java 객체지향
-date: 2020-05-06 18:45:00
+date: 2020-04-22 22:00:00
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: category
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 ## 객체지향 프로그래밍(Object Oriented Programming )이란?
 객체지향은 프로그램 설계방법론중 하나 이다. 프로그램을 수많은 '객체'라는 기본 단위로 나누고 이 객체들의 상호작용으로 서술하는 방식이다. 

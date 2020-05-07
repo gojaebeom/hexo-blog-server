@@ -1,7 +1,25 @@
+---
 title: JAVA - 07. 함수와 메소드
 author: JaeBeom Go
-date: 2020-05-06 18:51:12
+date: 2020-04-22 22:00:00
 tags:
+  - 자바
+  - 함수
+  - 메소드
+categories:
+  - 웹 개발
+  - java 객체지향
+toc: true
+widgets:
+  - type: toc
+    position: right
+  - type: category
+    position: right
+  - type: tagcloud
+    position: right
+sidebar:
+  right:
+    sticky: true
 ---
 ## 함수(Function)란?
 프로그래밍에서 함수는 하나의 기능을 수행하는 코드의 단위이다.
@@ -107,6 +125,19 @@ public static void func1(){...}
 public static void func2(){...}
 ```
 
-위 예제는 메인함수가 먼저 실행이되고 메인 함수에서 `func1` 과 `func2`함수를 차례대로 호출하고 있다.
+위 예제는 메인함수가 먼저 실행이되고 메인 함수에서 `func1` 과 `func2`함수를 차례대로 호출하고 있다. 
 
+먼저 메인 메소드가 실행이 되면 다음과 같이 스택에 메인함수가 생성이 된다.
+![스택 1](https://github.com/gojaebeom/hexo-blog-server/blob/master/themes/icarus/source/images/%EC%8A%A4%ED%83%9D3.png?raw=true)
 
+그리고 메인메서드가 func1 메소드를 호출한다.
+
+![스택 2](https://github.com/gojaebeom/hexo-blog-server/blob/master/themes/icarus/source/images/%EC%8A%A4%ED%83%9D1.png?raw=true)
+
+위의 메소드는 내부적으로 기능을 완료하고 종료한다. 
+![스택 1](https://github.com/gojaebeom/hexo-blog-server/blob/master/themes/icarus/source/images/%EC%8A%A4%ED%83%9D3.png?raw=true)
+
+그 이후 func2 메소드를 호출한다.
+![스택 2](https://github.com/gojaebeom/hexo-blog-server/blob/master/themes/icarus/source/images/%EC%8A%A4%ED%83%9D2.png?raw=true) 
+
+메소드는 이와같이 후입선출의 개념으로 스택영역에 저장되고, 소멸하게 된다.

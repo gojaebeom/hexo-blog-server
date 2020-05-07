@@ -1,6 +1,6 @@
 ---
 title: JAVA - 01. 자바 시작하기
-thumbnail: https://user-images.githubusercontent.com/62233873/78540149-aa58da80-782e-11ea-9754-33ae5e40ec43.jpg
+thumbnail: https://github.com/gojaebeom/hexo-blog-server/blob/master/themes/icarus/source/images/%EC%9E%90%EB%B0%94/java-thumbnail.jpg?raw=true
 date: 2020-04-21 19:09:00
 tags: 
 - java

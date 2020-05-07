@@ -1,5 +1,6 @@
 ---
 title: JAVA - 06. 객체지향 프로그래밍과 클래스
+thumbnail: https://github.com/gojaebeom/hexo-blog-server/blob/master/themes/icarus/source/images/%EC%9E%90%EB%B0%94/java-thumbnail.jpg?raw=true
 author: JaeBeom Go
 tags:
   - 자바
@@ -12,7 +13,7 @@ tags:
 categories:
   - 웹 개발
   - java 객체지향
-date: 2020-04-22 22:00:00
+date: 2020-04-27 19:05:00
 toc: true
 widgets:
   - type: toc
@@ -86,7 +87,7 @@ Student 클래스는 `new Student()`라는 선언을 통해 비로소 `Student �
 
 ## 인스턴스(Instance), 메모리 힙(Heap)
 
-![메모리 구조](https://github.com/gojaebeom/hexo-blog-server/blob/master/themes/icarus/source/images/%EB%A9%94%EB%AA%A8%EB%A6%AC%EA%B5%AC%EC%A1%B0.png?raw=true)
+![메모리 구조](https://github.com/gojaebeom/hexo-blog-server/blob/master/themes/icarus/source/images/%EC%9E%90%EB%B0%94/%EB%A9%94%EB%AA%A8%EB%A6%AC%EA%B5%AC%EC%A1%B0.png?raw=true)
 
 위 사진은 메모리의 구조를 나타낸다.
 

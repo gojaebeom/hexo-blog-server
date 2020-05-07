@@ -1,7 +1,8 @@
 ---
 title: JAVA - 07. 함수와 메소드
+thumbnail: https://github.com/gojaebeom/hexo-blog-server/blob/master/themes/icarus/source/images/%EC%9E%90%EB%B0%94/java-thumbnail.jpg?raw=true
 author: JaeBeom Go
-date: 2020-04-22 22:00:00
+date: 2020-04-27 19:10:00
 tags:
   - 자바
   - 함수
@@ -108,7 +109,7 @@ helloworld 메소드의 경우 내부적으로 println를 통해 문자열을 �
 addNum의 경우 int형 인자값을 두개 받기로 약속하였기 때문에 정수값 두개를 넘겨주고 내부에서 사칙연산을 수행 이후 값을 반환하고 있다. 그리고 반환값이 int형이기 때문에 int 타입의 변수에 값으로 할당할 수 있게 된다. 이후 그 값을 잘 출력하는 것을 볼 수 있다.
 
 ## 메소드와 메모리 스택(Stack)
-이전 클래스의 인스턴트 부분에서 메모리 구조에 대해 간략하게 소개한 적이 있다. 인스턴스는 메모리의 힙이라는 곳에 생성된다고 하였다. 반대로 메소드나, 메소드 내부에서 사용되는 변수(지역변수)들은 스택이라는 곳에 적재가 된다.
+이전 클래스의 인스턴트 부분에서 메모리 구조에 대해 간략하게 소개한 적이 있다. 인스턴스는 메모리의 힙이라는 곳에 생성된다고 하였다. 반대로 메소드나, 메소드 내부에서 사용되는 변수(지역변수)들은 스택이라는 곳에 저장된다.
 
 ### Last In First Out (LIFO)
 *스택은 후입선출의 방법으로 메모리를 관리한다. 즉 나중에 들어온 값이 가장 먼저 나가게 되는 것 이다.*
@@ -128,16 +129,15 @@ public static void func2(){...}
 위 예제는 메인함수가 먼저 실행이되고 메인 함수에서 `func1` 과 `func2`함수를 차례대로 호출하고 있다. 
 
 먼저 메인 메소드가 실행이 되면 다음과 같이 스택에 메인함수가 생성이 된다.
-![스택 1](https://github.com/gojaebeom/hexo-blog-server/blob/master/themes/icarus/source/images/%EC%8A%A4%ED%83%9D3.png?raw=true)
+![스택 1](https://github.com/gojaebeom/hexo-blog-server/blob/master/themes/icarus/source/images/%EC%9E%90%EB%B0%94/%EC%8A%A4%ED%83%9D3.png?raw=true)
 
 그리고 메인메서드가 func1 메소드를 호출한다.
 
-![스택 2](https://github.com/gojaebeom/hexo-blog-server/blob/master/themes/icarus/source/images/%EC%8A%A4%ED%83%9D1.png?raw=true)
+![스택 2](https://github.com/gojaebeom/hexo-blog-server/blob/master/themes/icarus/source/images/%EC%9E%90%EB%B0%94/%EC%8A%A4%ED%83%9D1.png?raw=true)
 
 위의 메소드는 내부적으로 기능을 완료하고 종료한다. 
-![스택 1](https://github.com/gojaebeom/hexo-blog-server/blob/master/themes/icarus/source/images/%EC%8A%A4%ED%83%9D3.png?raw=true)
-
+![스택 1](https://github.com/gojaebeom/hexo-blog-server/blob/master/themes/icarus/source/images/%EC%9E%90%EB%B0%94/%EC%8A%A4%ED%83%9D3.png?raw=true)
 그 이후 func2 메소드를 호출한다.
-![스택 2](https://github.com/gojaebeom/hexo-blog-server/blob/master/themes/icarus/source/images/%EC%8A%A4%ED%83%9D2.png?raw=true) 
+![스택 2](https://github.com/gojaebeom/hexo-blog-server/blob/master/themes/icarus/source/images/%EC%9E%90%EB%B0%94/%EC%8A%A4%ED%83%9D2.png?raw=true) 
 
 메소드는 이와같이 후입선출의 개념으로 스택영역에 저장되고, 소멸하게 된다.

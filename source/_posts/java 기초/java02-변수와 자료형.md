@@ -1,5 +1,5 @@
 ---
-title: JAVA - 01. 변수와 자료형
+title: JAVA - 02. 변수와 자료형
 thumbnail: https://user-images.githubusercontent.com/62233873/78540149-aa58da80-782e-11ea-9754-33ae5e40ec43.jpg
 date: 2020-04-21 19:25:00
 tags: 
@@ -54,6 +54,9 @@ System.out.println(testNum); // 에러
 
 // tip.동일한 자료형에 한해서 다수의 선언이 가능하다.
 int number1, number2, number3;
+
+// tip.다수의 선언과 동시에 값의 할당도 가능하다.
+int number4 = 10, number5 = 20;
 ```
 
 ### 식별자 규칙

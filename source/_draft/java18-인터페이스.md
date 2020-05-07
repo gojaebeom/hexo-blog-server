@@ -1,5 +1,5 @@
 ---
-title: JAVA - 16. 인터페이스
+title: JAVA - 18. 인터페이스
 thumbnail: https://user-images.githubusercontent.com/62233873/78540149-aa58da80-782e-11ea-9754-33ae5e40ec43.jpg
 date: 2020-04-29 22:56:00
 tags: 

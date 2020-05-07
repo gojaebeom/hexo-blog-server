@@ -1,5 +1,5 @@
 ---
-title: JAVA - 02. 상수와 형변환
+title: JAVA - 03. 상수와 형변환
 thumbnail: https://user-images.githubusercontent.com/62233873/78540149-aa58da80-782e-11ea-9754-33ae5e40ec43.jpg
 date: 2020-04-22 16:22:00
 tags: 

@@ -1,5 +1,5 @@
 ---
-title: JAVA - 04. 제어문
+title: JAVA - 05. 제어문
 thumbnail: https://user-images.githubusercontent.com/62233873/78540149-aa58da80-782e-11ea-9754-33ae5e40ec43.jpg
 date: 2020-04-22 17:16:00
 tags: 
@@ -62,14 +62,14 @@ if(num1 < num2) {
 }
 ```
 
-### 조건 연산자
-조건 연산자는 피연산자가 세 개인 연산자이다. (자바스크립트의 삼항연산자와 비슷하다.) 이러한 조건 연산자는 간단한 if~else문을 대체하는 용도로 주로 사용된다. 밑의 예제를 보자.
+### 조건 연산자(삼항 연산자)
+조건 연산자는 피연산자가 세 개인 연산자이다. 이러한 조건 연산자는 간단한 if~else문을 대체하는 용도로 주로 사용된다. 밑의 예제를 보자.
 ```java
 //조건 연산자 예제
-int num3 = 10;
-int num4 = 20;
-int num5 = (false) ? num3 : num4;
-System.out.println("결과 : "+ num5);
+int num1 = 10;
+int num2 = 20;
+int result = (false) ? num1 : num2;
+System.out.println("결과 : "+ result);
 ```
 변수 num5 는 선언과 동시에 조건연산자에 의한 값을 할당한다. ()안의 조건이 참이면 num3이 저장될 것이고 , 거짓이라면 num4가 저장될 것 이다. 하지만 임의적으로 false라는 값을 줌으로써 변수 num5에는 num4의 값, 즉 20이 저장되는것을 알 수 있다.
 

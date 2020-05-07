@@ -1,5 +1,5 @@
 ---
-title: JAVA - 08. 클래스 메소드
+title: JAVA - 10. 클래스 메소드
 thumbnail: https://user-images.githubusercontent.com/62233873/78540149-aa58da80-782e-11ea-9754-33ae5e40ec43.jpg
 date: 2020-04-26 16:09:00
 tags: 

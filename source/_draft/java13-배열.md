@@ -1,5 +1,5 @@
 ---
-title: JAVA - 11. 배열
+title: JAVA - 13. 배열
 thumbnail: https://user-images.githubusercontent.com/62233873/78540149-aa58da80-782e-11ea-9754-33ae5e40ec43.jpg
 date: 2020-04-27 19:16:00
 tags: 

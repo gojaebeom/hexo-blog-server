@@ -1,5 +1,5 @@
 ---
-title: JAVA - 17. 객체지향
+title: JAVA - 19. 객체지향
 thumbnail: https://user-images.githubusercontent.com/62233873/78540149-aa58da80-782e-11ea-9754-33ae5e40ec43.jpg
 date: 2020-05-02 22:56:00
 tags: 

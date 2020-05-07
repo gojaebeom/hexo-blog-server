@@ -1,5 +1,5 @@
 ---
-title: JAVA - 06. 정보은닉과 캡슐화
+title: JAVA - 07. 정보은닉과 캡슐화
 thumbnail: https://user-images.githubusercontent.com/62233873/78540149-aa58da80-782e-11ea-9754-33ae5e40ec43.jpg
 date: 2020-04-26 14:55:00
 tags: 

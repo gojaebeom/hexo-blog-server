@@ -1,5 +1,5 @@
 ---
-title: JAVA - 07. 클래스 변수
+title: JAVA - 09. 클래스 변수
 thumbnail: https://user-images.githubusercontent.com/62233873/78540149-aa58da80-782e-11ea-9754-33ae5e40ec43.jpg
 date: 2020-04-26 15:43:00
 tags: 

@@ -8,7 +8,7 @@ tags:
 - 형변환
 category:
 - 웹 개발
-- java 기초
+- java
 
 #카탈로그 생성 및 위치
 toc: true

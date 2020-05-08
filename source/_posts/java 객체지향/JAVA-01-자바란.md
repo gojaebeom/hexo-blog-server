@@ -10,7 +10,7 @@ tags:
 - 자바의 특징
 category:
 - 웹 개발
-- java 기초
+- java
 toc: true
 widgets:
   - type: toc

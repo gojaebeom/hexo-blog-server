@@ -9,7 +9,7 @@ tags:
   - 생성자 오버로딩
 categories:
   - 웹 개발
-  - java 객체지향
+  - java
 toc: true
 widgets:
   - type: toc

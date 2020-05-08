@@ -8,7 +8,7 @@ tags:
   - this
 categories:
   - 웹 개발
-  - java 객체지향
+  - java
 toc: true
 widgets:
   - type: toc
@@ -31,25 +31,20 @@ sidebar:
 this를 이용하여 생성자를 호출하는 방법을 알아보자.
 
 ```java
-public class this를_이용한_생성자호출 {
-	
+public class ExampleTest {
 	public static void main(String[] args) {
 		new Person(0);
 	}
-
 }
 
-class Person{
-	
-	Person(){
+public class Example{
+	Example(){
 		System.out.println("생성자 1");
 	}
-	
-	Person(int num1, int num2){
+	Example(int num1, int num2){
 		System.out.println("생성자 2");
 	}
-	
-	Person(int num){
+	Example(int num){
 		this(3, 4);
 		System.out.println("생성자 3");
 	}
@@ -63,19 +58,13 @@ class Person{
 ### this - 인스턴수 변수 접근
 앞서 키워드 this를 이용한 생성자의 호출에 대해 설명했는데, this는 다른 의미로도 사용이 된다. 이와 관련하여 다음 예제를 보자.
 ```java
-public class this_인스턴스변수_접근 {
-
-}
-
-class Animal{
+public class Example{
 	private String name;
 	
 	void setName(String name) {
 		this.name = name;
 	}
-	
 	String getName(){
-		
 		return this.name;
 	}
 }

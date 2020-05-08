@@ -2,6 +2,7 @@
 title: JAVA - 06. 객체지향 프로그래밍과 클래스
 thumbnail: https://github.com/gojaebeom/hexo-blog-server/blob/master/themes/icarus/source/images/%EC%9E%90%EB%B0%94/java-thumbnail.jpg?raw=true
 author: JaeBeom Go
+date: 2020-04-27 19:08:00
 tags:
   - 자바
   - 인스턴스
@@ -13,7 +14,6 @@ tags:
 categories:
   - 웹 개발
   - java 객체지향
-date: 2020-04-27 19:05:00
 toc: true
 widgets:
   - type: toc

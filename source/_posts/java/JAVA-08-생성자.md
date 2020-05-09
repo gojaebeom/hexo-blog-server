@@ -112,7 +112,6 @@ class StudentTest{
 예제를 살펴보자.
 ```java
 class Student{
-
     Student(){...}
 
     Student(String name){...}

@@ -214,21 +214,17 @@ class MobilePhone{
 
 //모바일폰을 상속받는 하위클래스 스마트폰
 class SmartPhone extends MobilePhone{
-	
 	private String androidVer;// 안드로이드 운영체제 네임(버전)
 
 	public SmartPhone(String number, String ver) {
 		super(number);
 		this.androidVer = ver;
 	}
-	
 	public void playApp() {
 		System.out.println("App is running in " + androidVer);
 	}
 }
-
-class Overriding_Exam01{
-
+class OverridingTest{
     public static void main(String[] args) {
 		SmartPhone ph1 = new SmartPhone("010-111-222", "Andro01");
 		MobilePhone ph2 = new SmartPhone("010-444-333", "Andro02");
@@ -240,7 +236,6 @@ class Overriding_Exam01{
 		//ph2.playApp();
 	}
 }
-
 ```
 
 위 예제에서는 다음과 같이 인스턴스를 생성하였다.
@@ -282,7 +277,9 @@ ph2.answer();
 단점이 많은 일부 기능을 제한함으로써 단순하고 명료한 코드의 작성을 유도하는 언어가 좋은 언어이다. 그런 측면에서 참조변수의 타입을 기준으로 접근 가능한 멤버를 제한한 것은 의미가 있는 일이다.
 <br>
 
-## 클래스의 상속과 참조변수의 참조 가능성
+## 업캐스팅(Up Casting)
+업캐스팅이란 서브 클래스의 객체가 수퍼 클래스 타입으로 형변환되는 것을 말한다.
+
 다음과 같이 상속 관계를 맺은 세 클래스가 존재한다고 가정하자.
 ```java
 class Cake{
@@ -301,10 +298,10 @@ class StrawberryCheeseCake extends CheeseCake{
 이때 StrawberryCheeseCake 인스턴스는 다음과 같이 말할 수 있다.
 - _StrawberryCheeseCake 인스턴스는 CheeseCake 인스턴스이면서 Cake 인스턴스 이다._
 
-따라서 다음과 같이 인스턴스를 참조할 수 있다.
+따라서 다음과 같이 인스턴스를 참조할 수 있다. 
 ```java
-Cake cake1 = new StrawberryCheeseCake();
-CheeseCake cake2 = new StrawberryCheeseCake();
+Cake cake1 = new StrawberryCheeseCake();//업캐스팅
+CheeseCake cake2 = new StrawberryCheeseCake();//업캐스팅
 ```
 <br>
 그러나 Cake형 참조변수 cake1을 통해서 호출할 수 있는 메소드는 다음 한 가지이다.

@@ -1,5 +1,5 @@
 ---
-title: JAVA - 17 메소드 오버라이딩
+title: JAVA - 17. 메소드 오버라이딩
 thumbnail: https://github.com/gojaebeom/hexo-blog-server/blob/master/themes/icarus/source/images/%EC%9E%90%EB%B0%94/java-thumbnail.jpg?raw=true
 author: JaeBeom Go
 date: 2020-05-02 21:20:00
@@ -64,7 +64,7 @@ public class YummyCakeOverriding {
 
 위의 예제의 main 메소드에서 다음과 같이 Cake 형 참조변수로 CheeseCake 인스턴스를 참조하였다.
 ```java
-Cake c1 = new CheeseCake();
+Cake c1 = new CheeseCake();//업캐스팅
 ```
 
 그리고 다음과 같이 yummy 메소드를 호출하였다.

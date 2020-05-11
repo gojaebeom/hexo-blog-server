@@ -1,21 +1,12 @@
 ---
-title: JAVA - 19. 중간 정리
+title: JAVA - 21. 객체지향
 thumbnail: https://user-images.githubusercontent.com/62233873/78540149-aa58da80-782e-11ea-9754-33ae5e40ec43.jpg
-date: 2020-05-06 21:20:00
+date: 2020-05-02 22:56:00
 tags: 
 - java
 - 자바 객체지향
 - 객체지향
 - 자바의 특징
-- 객체지향 추상화
-- 객체지향 다형성
-- 객체지향 캡슐화
-- 객체지향 정보은닉
-- 객체지향 상속
-- 클래스
-- 인터페이스
-- 오버라이딩
-- 오버로딩
 category:
 - 웹 개발
 - java

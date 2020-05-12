@@ -1,7 +1,7 @@
 ---
-title: JAVA - 21. 객체지향
+title: JAVA - 21. 객체지향의 특징
 thumbnail: https://user-images.githubusercontent.com/62233873/78540149-aa58da80-782e-11ea-9754-33ae5e40ec43.jpg
-date: 2020-05-02 22:56:00
+date: 2020-05-06 21:20:00
 tags: 
 - java
 - 자바 객체지향
@@ -260,9 +260,99 @@ public class Test {
 위의 예제와 같이 기존의 폰을 사용 사용하는 사람은 따로 변화를 주지 않아도 되고, 새로 스마트폰을 쓰는 사람들만 SmartPhone 객체로 생성해주면 되는 것 이다. 이건 어디까지나 글쓴이가 생각하는 예제이다. 본인한테 맞는 방법으로 생각하는 것이 좋을 것 같다.
 
 ## 다형성
-객체 지향 언어에서 다형성이란 하나의 클래스나 메서드가 다양한 방식으로 동작이 가능 한 것을 의미한다. 다형성에는 오버로딩과 오버라이딩이 있다. 
+[다형성](https://gojaebeom.github.io/2020/05/03/java/JAVA-18-%EB%8B%A4%ED%98%95%EC%84%B1)에 대한 정리 글을 참고해보자. 다형성은 여러 가지 형태를 가질 수 있는 기능을 말한다.
 
-### 오버라이딩(Overriding)
+```java
+abstract class LolChampions{
+  public abstract void champName();
+  public abstract void qSkill();
+  public abstract void wSkill();
+  public abstract void eSkill();
+  public abstract void rSkill();
+  public final void champInfo() {
+  System.out.println("챔피언 정보");
+    champName();
+    qSkill();
+    wSkill();
+    eSkill();
+    rSkill();
+  }
+}
+class Heimerdinger extends LolChampions{
+  @Override
+    public void champName() {
+    System.out.println("하이머딩거");
+  }
+  @Override
+    public void qSkill() {
+    System.out.println("Q스킬 : H-28G 진화형 포탑");
+  }
+  @Override
+    public void wSkill() {
+    System.out.println("W스킬 : 마법공학 초소형 로켓");
+  }
+  @Override
+    public void eSkill() {
+    System.out.println("E스킬 : CH-2 전자폭풍 수류탄");
+  }
+  @Override
+    public void rSkill() {
+    System.out.println("궁극기 : 업그레이드!!!");
+  }
+}
+class Lux extends LolChampions{
+  @Override
+    public void champName() {
+    System.out.println("럭스");
+  }
+  @Override
+    public void qSkill() {
+    System.out.println("Q스킬 : 빛의 속박");
+  }
+  @Override
+    public void wSkill() {
+    System.out.println("W스킬 : 프리즘 보호막");
+  }
+  @Override
+    public void eSkill() {
+    System.out.println("E스킬 : 광휘의 특이점");
+  }
+  @Override
+    public void rSkill() {
+    System.out.println("궁극기 : 최후의 섬광");
+  }
+}
+```
+다형성을 설명하기위해 두개의 클래스가 하나의 추상클래스를 상속받는 예제를 보였다. 아래 예제를 보자.
+```java
+public class PolymorphismTest {
+    public static void main(String[] args) {
+    LolChampions lolChamp = null;
+
+    Scanner sc = new Scanner(System.in);
+    System.out.println("챔피언을 고르시오.");
+    System.out.println("1. 하이머딩거 / 2. 럭스");
+
+    switch(sc.nextInt()) {
+    case 1:
+      lolChamp = new Heimerdinger();
+      break;
+    case 2:
+      lolChamp = new Lux();
+      break;
+    default:
+      System.out.println("잘못된 입력입니다!");
+    }
+
+    if(lolChamp != null) {
+      lolChamp.champInfo();
+    }
+  }
+}
+```
+`LolChampions` 타입의 참조변수를 선언하고 `null` 값을 받고 있다. 그리고 스캐너를 통해 콘솔값 1을 입력받으면 참조변수 `lolChamp`에 `Heimerdinger` 인스턴스를 참조하고 2를 입력 받으면 `Lux` 인스턴스를 참조한다. 이것이 다형성이다. 하나의 참조변수에 타입이 다른 객체들이 참조되어 하나의 코드가 상황에 따라 다른 결과를 보여주게된다. 
+
+## 오버라이딩(Overriding)
 상위 클래스에 정의된 메소드를 하위 클래스에서 다시 정의하는 행위를 가리켜 '메소드 오버라이딩' 이라 하는데, 여기서 말하는 오버라이딩은 '무효화 시키다'의 뜻으로 해석이 된다.
 
 ```java
@@ -292,7 +382,7 @@ public class Test{
 위와 같이 A클래스를 B클래스가 상속 받으면서 기존의 A클래스에 있는 Hello 메소드를 B클래스에서 재정의 하였다. 메소드명을 바꾼다거나, 매개변수를 바꾼다거나, 반환형을 바꾼다는 개념이 아니다. 메소드 내부 로직을 바꾸는 것을 의미한다. 위의 상속의 개념에서 사용되는 overriding은 상속을 보다 편리하게 해주는 장점이 있다.
 
 
-### 오버로딩(Overloading)
+## 오버로딩(Overloading)
 한 클래스 내에 동일한 이름의 메소드를 둘 이상 정의한느 것은 허용되지 않는다. 그러나 매개변수의 선언이 다르면 가능하다. 그리고 이것을 메소드 오버로딩이라 한다.
 
 **메소드 오버로딩의 조건**

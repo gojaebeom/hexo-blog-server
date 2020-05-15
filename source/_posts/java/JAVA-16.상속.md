@@ -9,13 +9,12 @@ tags:
 categories:
   - 웹 개발
   - java
+#카탈로그 생성 및 위치
 toc: true
 widgets:
   - type: toc
     position: right
-  - type: category
-    position: right
-  - type: tagcloud
+  - type: bgm
     position: right
 sidebar:
   right:

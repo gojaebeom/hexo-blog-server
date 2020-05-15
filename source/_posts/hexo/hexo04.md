@@ -18,11 +18,8 @@ toc: true
 widgets:
   - type: toc
     position: right
-  - type: category
+  - type: bgm
     position: right
-  - type: tagcloud
-    position: right
-#위치고정 여부
 sidebar:
   right:
     sticky: true

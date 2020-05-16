@@ -54,7 +54,6 @@
         transition:1s;
         opacity:1;
     }
-   
 </style>
 
 <div id="custom-widget" class="card widget">
@@ -82,39 +81,44 @@
     var title = document.querySelector('.title-font');
     var subTitle = document.querySelector('.sub-title-font');
 
-    //bgm count
-    var count = 0;
-
+    
+    //source:"/audio/Nanase_Dear.mp3"
     //bgm info
     var bgmArr = [
         {
             title:"Near",
             subTitle:"Nanase",
-            img:"/images/bgm-img/bgm-img1.jpg",
-            source:"/audio/Nanase_Dear.mp3"
+            img:"/images/bgm-img/bgm-img1.png",
+            source:"/audio/example.mp3"
         },
         {
             title:"SOSO",
             subTitle:"샛별",
-            img:"/images/bgm-img/bgm-img2.jpg",
+            img:"/images/bgm-img/bgm-img2.png",
             source:"/audio/SOSO.mp3"
         },
         {
             title:"Join Us for a Bite",
             subTitle:"JT Music",
-            img:"/images/bgm-img/bgm-img3.jpg",
-            source:"/audio/Join Us for a Bite.mp3"
+            img:"/images/bgm-img/bgm-img3.png",
+            source:"/audio/JT Music - Join Us for a Bite.mp3"
         }
     ];
+
+    //bgm count
+    var count = 0;
 
     //오디오 객체 생성
     var audio = new Audio();
     audio.src = bgmArr[count].source;
-
-    //브라우저 시작시 bgm 정보 생성
     bgmUpdate(count);
 
-    //시작 버튼     
+    //노래 자동재생
+    audio.addEventListener('ended',()=>{
+        front();
+    });
+    
+    //시작 버튼
     function start(){
         start_button.style.display = "none";
         stop_button.style.display = "block";

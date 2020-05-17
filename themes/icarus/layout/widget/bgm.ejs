@@ -1,61 +1,60 @@
 <style>
-    #custom-widget{
-        margin:20px 0px;
-        display:flex;
-        height:150px;
-        overflow: hidden;
-    }
-    #custom-widget .left-box{
-        flex:6;
-        display:flex;
-        flex-direction: column;
-        justify-content:center;
-        align-items: center;
-    }
-    #custom-widget .left-box #audio{
-        display:none;
-    }
-    #custom-widget .left-box .title-font{
-        font-size:16px;
-        font-weight:bold;
-    }
-    #custom-widget .left-box .sub-title-font{
-        font-size:14px;
-        margin-bottom:10px;
-    }
-    #custom-widget .left-box .button-wrap{
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        font-size:20px;
-    }
-    #custom-widget .left-box .button-wrap i{
-        margin:0px 10px;
-        color:#848484;
-        cursor: pointer;
-    }
-    #custom-widget .left-box .button-wrap i:hover{
-        color:black;
-    }
-    #custom-widget .left-box .button-wrap .ri-play-fill{
-        font-size:30px;
-    }
-    #custom-widget .left-box .button-wrap .ri-pause-fill{
-        font-size:30px;
-        display:none;
-    }
-    #custom-widget .right-box{
-        flex:4;
-        transition:1s;
-        opacity:0.9;
-    }
-    #custom-widget .right-box:hover{
-        flex:4;
-        transition:1s;
-        opacity:1;
-    }
+#custom-widget{
+    margin:20px 0px;
+    display:flex;
+    height:150px;
+    overflow: hidden;
+}
+#custom-widget .left-box{
+    flex:6;
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+#custom-widget .left-box #audio{
+    display:none;
+}
+#custom-widget .left-box .title-font{
+    font-size:16px;
+    font-weight:bold;
+}
+#custom-widget .left-box .sub-title-font{
+    font-size:14px;
+    margin-bottom:10px;
+}
+#custom-widget .left-box .button-wrap{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:20px;
+}
+#custom-widget .left-box .button-wrap i{
+    margin:0px 10px;
+    color:#848484;
+    cursor: pointer;
+}
+#custom-widget .left-box .button-wrap i:hover{
+    color:black;
+}
+#custom-widget .left-box .button-wrap .ri-play-fill{
+    font-size:30px;
+}
+#custom-widget .left-box .button-wrap .ri-pause-fill{
+    font-size:30px;
+    display:none;
+}
+#custom-widget .right-box{
+    flex:4;
+    transition:1s;
+    opacity:0.9;
+}
+#custom-widget .right-box:hover{
+    flex:4;
+    transition:1s;
+    opacity:1;
+}
 </style>
-
 <div id="custom-widget" class="card widget">
     <div class="left-box">
         <h1 class="title-font">Song Name</h1>
@@ -72,101 +71,105 @@
     </div>
 </div>
 <script>
-    var start_button = document.querySelector('.ri-play-fill');
-    var stop_button = document.querySelector('.ri-pause-fill');
-    var left_button = document.querySelector('.ri-skip-back-fill');
-    var right_button = document.querySelector('.ri-skip-forward-fill');
-    var bgmImg = document.querySelector('.bgm-img');
+var start_button = document.querySelector('.ri-play-fill');
+var stop_button = document.querySelector('.ri-pause-fill');
+var left_button = document.querySelector('.ri-skip-back-fill');
+var right_button = document.querySelector('.ri-skip-forward-fill');
+var bgmImg = document.querySelector('.bgm-img');
 
-    var title = document.querySelector('.title-font');
-    var subTitle = document.querySelector('.sub-title-font');
+var title = document.querySelector('.title-font');
+var subTitle = document.querySelector('.sub-title-font');
 
-    
-    //source:"/audio/Nanase_Dear.mp3"
-    //bgm info
-    var bgmArr = [
-        {
-            title:"Near",
-            subTitle:"Nanase",
-            img:"/images/bgm-img/bgm-img1.png",
-            source:"/audio/Nanase_Dear.mp3"
-        },
-        {
-            title:"SOSO",
-            subTitle:"샛별",
-            img:"/images/bgm-img/bgm-img2.png",
-            source:"/audio/SOSO.mp3"
-        },
-        {
-            title:"Join Us for a Bite",
-            subTitle:"JT Music",
-            img:"/images/bgm-img/bgm-img3.png",
-            source:"/audio/JT Music - Join Us for a Bite.mp3"
-        }
-    ];
-
-    //bgm count
-    var count = 0;
-
-    //오디오 객체 생성
-    var audio = new Audio();
-    audio.src = bgmArr[count].source;
-    bgmUpdate(count);
-
-    //노래 자동재생
-    audio.addEventListener('ended',()=>{
-        front();
-    });
-
-    //시작 버튼
-    function start(){
-        start_button.style.display = "none";
-        stop_button.style.display = "block";
-        audio.play();
+//bgm info
+var bgmArr = [
+    {
+        title:"Near",
+        subTitle:"Nanase",
+        img:"/images/bgm-img/bgm-img1.png",
+        source:"/audio/Nanase_Dear.mp3"
+    },
+    {
+        title:"Join Us for a Bite",
+        subTitle:"JT Music",
+        img:"/images/bgm-img/bgm-img3.png",
+        source:"/audio/JT Music - Join Us for a Bite.mp3"
+    },
+    {
+        title:"SOSO",
+        subTitle:"샛별",
+        img:"/images/bgm-img/bgm-img2.png",
+        source:"/audio/SOSO.mp3"
     }
+];
 
-    //중지 버튼
-    function stop(){
-        stop_button.style.display = "none";
-        start_button.style.display = "block";
-        audio.pause();
-    }
+//bgm count
+var count = 0;
 
-    //다음 버튼
-    function front(){
-        if(count === bgmArr.length-1){
-            count = 0;
-            audio.src = bgmArr[count].source;
-            start();
-            bgmUpdate(count);
-        }else{
-            audio.src = bgmArr[++count].source;
-            start();
-            bgmUpdate(count);
-        }
-    }
-    
-    //이전 버튼
-    function back(){
-      if(audio.currentTime <= 3 && count > 0){
-          audio.src = bgmArr[--count].source;
-          start();
-          bgmUpdate(count);
-      }else{
-        audio.currentTime = 0;
-      }
-    }
+//오디오 객체 생성
+var audio = new Audio();
+audio.src = bgmArr[count].source;
+bgmUpdate(count);
 
-    //bgm객체 업데이트
-    function bgmUpdate(count){
-        title.innerHTML = bgmArr[count].title;
-        subTitle.innerHTML = bgmArr[count].subTitle;
-        bgmImg.src = bgmArr[count].img;
-    }
+//노래 자동재생
+audio.addEventListener('ended',()=>{
+    front();
+});
 
-    start_button.onclick = start;
-    stop_button.onclick = stop;
-    left_button.onclick = back;
-    right_button.onclick = front;
+//시작 버튼
+function start(){
+    start_button.style.display = "none";
+    stop_button.style.display = "block";
+    audio.play();
+}
+
+//중지 버튼
+function stop(){
+    stop_button.style.display = "none";
+    start_button.style.display = "block";
+    audio.pause();
+}
+
+//다음 버튼
+function front(){
+    if(count === bgmArr.length-1){
+        count = 0;
+        audio.src = bgmArr[count].source;
+        start();
+        bgmUpdate(count);
+    }else{
+        audio.src = bgmArr[++count].source;
+        start();
+        bgmUpdate(count);
+    }
+}
+
+//이전 버튼
+function back(){
+    if(audio.currentTime <= 3 && count > 0){
+        audio.src = bgmArr[--count].source;
+        start();
+        bgmUpdate(count);
+    }else{
+    audio.currentTime = 0;
+    }
+}
+
+//bgm객체 업데이트
+function bgmUpdate(count){
+    title.innerHTML = bgmArr[count].title;
+    subTitle.innerHTML = bgmArr[count].subTitle;
+    bgmImg.src = bgmArr[count].img;
+}
+
+function gmt(count){
+    title.innerHTML = bgmArr[count].title;
+    subTitle.innerHTML = bgmArr[count].title;
+    bgmImg.src = bgmArr[count].img;
+}
+
+start_button.onclick = start;
+stop_button.onclick = stop;
+left_button.onclick = back;
+right_button.onclick = front;
 </script>
 

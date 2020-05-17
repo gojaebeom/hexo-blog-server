@@ -37,10 +37,10 @@
 <%- css('https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.css') %>
 <%- _css(cdn('highlight.js', '9.12.0', 'styles/' + get_config('article.highlight.theme') + '.css')) %>
 
+
 <% if (has_config('plugins')) { %>
     <% for (let plugin in get_config('plugins')) { %>
-    <%- _partial('plugin/' + plugin, { head: true, plugin: get_config('plugins')[plugin] }) %>
+    <%- _partial('plugin/' + plugin, {head: true, plugin: get_config('plugins')[plugin] }) %>
     <% } %>
 <% } %>
-
 <%- _css('css/style') %>

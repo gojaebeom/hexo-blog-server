@@ -54,6 +54,9 @@
     transition:1s;
     opacity:1;
 }
+#custom-widget .left-box{
+    flex-direction:column;
+}
 </style>
 <div id="custom-widget" class="card widget">
     <div class="left-box">
@@ -158,12 +161,6 @@ function back(){
 function bgmUpdate(count){
     title.innerHTML = bgmArr[count].title;
     subTitle.innerHTML = bgmArr[count].subTitle;
-    bgmImg.src = bgmArr[count].img;
-}
-
-function gmt(count){
-    title.innerHTML = bgmArr[count].title;
-    subTitle.innerHTML = bgmArr[count].title;
     bgmImg.src = bgmArr[count].img;
 }
 

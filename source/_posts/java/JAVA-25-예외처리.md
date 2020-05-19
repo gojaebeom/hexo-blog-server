@@ -1,6 +1,6 @@
 ---
 title: JAVA - 25. 예외 처리
-thumbnail: https://user-images.githubusercontent.com/62233873/78540149-aa58da80-782e-11ea-9754-33ae5e40ec43.jpg
+thumbnail: https://github.com/gojaebeom/hexo-blog-server/blob/master/themes/icarus/source/images/%EC%9E%90%EB%B0%94/thumbnail.png?raw=true
 date: 2020-05-16 21:20:00
 tags: 
 - java

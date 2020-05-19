@@ -1,6 +1,6 @@
 ---
 title: JAVA - 07. 함수와 메소드
-thumbnail: https://github.com/gojaebeom/hexo-blog-server/blob/master/themes/icarus/source/images/%EC%9E%90%EB%B0%94/java-thumbnail.jpg?raw=true
+thumbnail: https://github.com/gojaebeom/hexo-blog-server/blob/master/themes/icarus/source/images/%EC%9E%90%EB%B0%94/thumbnail.png?raw=true
 author: JaeBeom Go
 date: 2020-04-27 19:10:00
 tags:

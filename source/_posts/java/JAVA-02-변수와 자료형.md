@@ -1,6 +1,6 @@
 ---
 title: JAVA - 02. 변수와 자료형
-thumbnail: https://github.com/gojaebeom/hexo-blog-server/blob/master/themes/icarus/source/images/%EC%9E%90%EB%B0%94/java-thumbnail.jpg?raw=true
+thumbnail: https://github.com/gojaebeom/hexo-blog-server/blob/master/themes/icarus/source/images/%EC%9E%90%EB%B0%94/thumbnail.png?raw=true
 date: 2020-04-21 19:25:00
 tags: 
 - java

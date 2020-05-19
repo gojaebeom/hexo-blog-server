@@ -1,6 +1,6 @@
 ---
 title: github Blog 만들기 - hexo 설치 및 배포
-thumbnail: https://cdn-images-1.medium.com/max/1600/1*pv5LukDtyQx5JXQee2uNgA.jpeg
+thumbnail: https://github.com/gojaebeom/hexo-blog-server/blob/master/themes/icarus/source/images/github/thumbnail.png?raw=true
 date: 2020-04-20 18:00:00
 tags: 
 - hexo

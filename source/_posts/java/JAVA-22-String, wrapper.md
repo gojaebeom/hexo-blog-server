@@ -107,4 +107,5 @@ public static void main(String[] args){
 | double  | Double  | 
 | void    | Void    | 
 
+
 > void 클래스는 실체화될 수 없으며 단지 공 참조 개념을 나타낸다.

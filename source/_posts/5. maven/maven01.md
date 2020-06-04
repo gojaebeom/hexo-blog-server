@@ -1,5 +1,5 @@
 ---
-title: Maven
+title: Maven을 알아보자
 
 thumbnail: images/maven/thumbnail.png
 date: 2020-06-01 19:09:00

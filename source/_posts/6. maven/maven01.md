@@ -9,7 +9,7 @@ tags:
 
 category:
 - 자바 튜토리얼
-- 2. maven
+- 3. maven
 
 #카탈로그 생성 및 위치
 toc: true

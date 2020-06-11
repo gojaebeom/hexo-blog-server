@@ -1,10 +1,8 @@
-font-sans = Nanum Gothic, "Helvetica Neue", sans-serif
+//font-sans = , "Helvetica Neue", sans-serif
+family-sans = "Noto Sans KR", "Roboto", "Open Sans", "Microsoft YaHei", sans-serif
 family-mono = "Balsamiq Sans", monospace, "Microsoft YaHei"
+//family-mono = "Source Code Pro", monospace, "Microsoft YaHei"
 
-/**
-family-sans = "Ubuntu", "Roboto", "Open Sans", "Microsoft YaHei", sans-serif
-family-mono = "Source Code Pro", monospace, "Microsoft YaHei"
-*/
 gap = 64px
 screen-tablet = 769px
 screen-desktop = 1088px
@@ -83,6 +81,7 @@ img.thumbnail
         max-height: 1.75rem
 
 .navbar-main
+    font-family: 'Balsamiq Sans', cursive;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05)
     .navbar-menu,
     .navbar-start,
@@ -118,6 +117,7 @@ img.thumbnail
             margin-left: 0
 
 .footer
+    font-family: 'Balsamiq Sans', cursive;
     background: white
     .field
         .button
@@ -179,8 +179,10 @@ img.thumbnail
 .article
     .article-meta
         margin-bottom: 0.5rem !important
+    .title
+        font-family: 'Nanum Myeongjo', serif;
     .content
-        font-size: 1.2rem
+        font-size: 1.3rem
         font-family: 'Nanum Myeongjo', serif;
         blockquote.pullquote
             float: right

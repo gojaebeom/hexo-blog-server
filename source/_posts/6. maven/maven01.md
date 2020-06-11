@@ -23,7 +23,6 @@ sidebar:
     sticky: true
 ---
 
-## Maven이란?
 메이븐은 자바 프로젝트의 빌드(build)를 자동화 해주는 관리 도구(build tool)이다.<!-- more -->  아파치 소프트웨어 제단에서 만들어졌으며,      이전의 Apache Ant 의 대안으로 만들어졌다. 
 
 `Too Much Information`

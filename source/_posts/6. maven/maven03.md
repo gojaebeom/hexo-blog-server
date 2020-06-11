@@ -23,7 +23,6 @@ sidebar:
     sticky: true
 ---
 
-## pom.xml 
 pom은 project object model의 약자로써 메이븐은 pom에 기술된 내용을 바탕으로 빌드를 진행한다. 즉 pom은 maven에서 사용하는 빌드 파일이다.
 <!-- more -->
 아래의 코드는 이전 글의 메이븐 생성하기에서 만든 프로젝트의 pom.xml을 열었을 때 볼 수 있는 내용이다.

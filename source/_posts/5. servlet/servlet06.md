@@ -1,8 +1,8 @@
 ---
-title: Jsp -> Servlet 변환
+title: Jsp 프로그래밍
 
 thumbnail: images/servlet/thumbnail.png
-date: 2020-05-25 20:20:00
+date: 2020-05-24 22:20:00
 
 tags: 
 - servlet
@@ -27,100 +27,59 @@ sidebar:
 <sup># 설명이 다소 부족하거나 중간 내용이 생략될 수 있습니다.</sup>
 
 ## jsp란?
-jsp 란 `Java Server Pages` 의 약자이며 HTML 코드에 JAVA 코드를 넣어 동적웹페이지를 생성하는 웹어플리케이션 도구이다.<!-- more -->
+jsp 란 `Java Server Pages` 의 약자이며 HTML 코드에 JAVA 코드를 넣어 동적웹페이지를 생성하는 웹어플리케이션 도구이다. <!-- more -->
 
-## jsp 와 servlet 
-웹 어플리케이션에 배포된 jsp 페이지는 최초 클라이언트 요청이 들어올 때 servlet으로 변환된다.
+jsp에서는 기본적인 html 코드에 자바 문법을 추가하여 문서 내용을 동적으로 관리할 수 있는데, `<% %>` <-- 처럼 생긴 코드블럭 내부에 자바 문법을 작성하면 된다. 
 
-변환되는 내용은 다음과 같다.
-- `Scriptlet <% %>` 에 작성된 소스는 변환된 Servlet의 `service()` 메서드 안에 들어간다.
-- **표현식**은 변환된 servlet의 `service()` 메서드 안에서 `out.print()` 으로 변환된다.
-- **선언문**에 작성된 소스는 변환된 servlet의 맴버 영역에 생성 (변수 선언시 맴버변수, 메서드 선언시 맴버매서드)
-- 일반 HTML 태그들은 변환된 servlet의 `service()` 메서드 안에 `out.write()` 메서드로 변환된다.
-- page 디렉티브의 속성값들은 servlet으로 변환시 참고할 정보로 활용된다.
+### 코드 블럭
+다음 예제를 보고 코드블럭에 대한 설명을 보자.
 
-위의 문장으로는 이해하기 힘들 수도 있다. 다음 예제를 보자.
-
-### jsp -> servlet 변환 예제
 ```jsp
-<!-- index.jsp -->
-<!-- 일반 html 코드 : out.write() 내부에 작성  -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<%! //선언문 : class 전역에 생성
-  String name = "gojaebeom";
-  int age = 26;
+<%
+	String name = "gojaebeom";
+	int age = 26;
 %>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>example page</title>
-  </head>
-  <body>
-    <!-- 표현식: out.println() 내부에서 사용 -->
-    <p>제 이름은 <%= name %> 이고 나이는 <%= age  %> 입니다.
-  </body>
+<head>
+<meta charset="UTF-8">
+<title>example page</title>
+</head>
+<body>
+	<p>제 이름은 <%= name %> 이고 나이는 <%= age  %> 입니다.
+</body>
 </html>
 ```
 
-위와 같은 jsp 파일을 만들었다고 가정하면 index.jsp 파일은 jsp 컨테이너에 의해 index_jsp.java 파일로 변환된다. 변환되는 부분이 많아 중간 중간 생략하여 보이겠다.
+### 스크립트릿(Scriptlet)
+`<% %>` 블럭 사이에 오는 코드이며 가장 기본이되는 코드블럭이다. 기본적인 자바 프로그래밍은 이곳에서 처리 할 수 있고, 다음에 다루는 블럭들의 조건에 맞으면 상황에 따라 바꿔 사용하면 된다.
 
-```java
-//index_jsp.java
-public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
-    implements org.apache.jasper.runtime.JspSourceDependent,
-                 org.apache.jasper.runtime.JspSourceImports {
+### 지시자(Directives)
+`<%@ %>` 블럭 사이에 오는 코드를 말한다. 주로 `page` 지시자를 사용한다.
 
-  //선언문의 내용은 class의 전역에서 사용
-  String name = "gojaebeom";
-  int age = 26;
+`contentType`, `pageEncoding`등을 설정한다.
+- contentType은 jsp 파일을 html 문서로 변환할 때 적용되는 인코딩이다.
+- pageEncoding은 jsp 파일에 적용되는 인코딩이다.
 
-  public void _jspService(final javax.servlet.http.HttpServletRequest request, final javax.servlet.http.HttpServletResponse response)
-      throws java.io.IOException, javax.servlet.ServletException {
+page 지시자 대신 `import` 지시자도 사용될 수 있는데, 자바에서 사용하는 import와 같은 사용법 이다.
 
-    final javax.servlet.jsp.PageContext pageContext;
-    javax.servlet.http.HttpSession session = null;
-    final javax.servlet.ServletContext application;
-    final javax.servlet.ServletConfig config;
-    javax.servlet.jsp.JspWriter out = null;
-    final java.lang.Object page = this;
-    javax.servlet.jsp.JspWriter _jspx_out = null;
-    javax.servlet.jsp.PageContext _jspx_page_context = null;
+### 선언문(Declarations)
+`<%! %>` 블럭 사이에 오는 코드이다. 보통 서블릿 클래스의 선언부(전역, 맴버)에 입력되는 내용이다.
 
-    //page 디렉티브의 속성값
-    response.setContentType("text/html; charset=UTF-8");
+`tip`
+<sup>jsp는 jsp 컨테이너에 의해 최종적으론 servlet파일로 변환된다. 다음 글에서 이해 대해 다룰 예정이다.</sup>
 
-    //html 태그들은 out.write로 사용
-    out.write("\r\n");
-    out.write("<!DOCTYPE html>\r\n");
-    out.write("\r\n");
-    out.write("<html>\r\n");
-    out.write("<head>\r\n");
-    out.write("<meta charset=\"UTF-8\">\r\n");
-    out.write("<title>example page</title>\r\n");
-    out.write("</head>\r\n");
-    out.write("<body>\r\n");
-    out.write("\t<p>제 이름은 ");
+### 표현식(Expression)
+`<%= %>`태그 사이에 오는 코드이다. 출력할 내용은 이곳에 입력해야된다. 
 
-    //표현식은 out.print로 사용
-    out.print( name );
-    out.write(" 이고 나이는 ");
+## EL(Expression Language)
+EL의 개념은 표현 언어를 이해하고 속성 값들을 편리하게 출력하기 위해 제공된 언어이다.
 
-    //표현식은 out.print로 사용
-    out.print( age  );
-    out.write(" 입니다.\r\n");
-    out.write("</body>\r\n");
-    out.write("</html>");
-  }
-}
-```
+### 사용목적
+<%= %> , out.println()과 같은 자바코드를 더 이상 사용하지 않고 좀더 간편하게 출력을 지원하기 위한 도구.
 
-원래 더 많은 소스코드들이 포함되어 있지만 설명을 위해 부분부분 제거하였다. 위 `index_jsp.java` 예제를 보면 `index_jsp` 클래스가 `org.apache.jasper.runtime.HttpJspBase` 를 상속하고 있는데 `HttpJspBase`는 `HttpServlet`을 상속하고 있는 클래스이므로 서블릿이라고 할 수 있다.
-
-`Tip`
-이클립스 기준으로 jsp 파일을 만들면 사용되는 것은 개발 프로젝트 폴더 내부의 jsp 파일이 아니다. 
-이클립스 내부의 톰캣은 톰캣의 사본을 만들어 프로젝트들을 관리하게 되는데, 기본 작업폴더에 `metadata\.plugins\org.eclipse.wst.server.core` 폴더에 `tmp0` 또는 `tmp1~` 의 폴더 내부의 `work` 폴더가 있다. `work`가 바로 servlet 파일로 변환된 jsp 들을 관리 하는 폴더이다. 우리가 개발을 하며 봐온 jsp 파일은 바로 `work` 하위 디렉토리에 있는 servlet 파일이다.
-
-## servlet 변환 과정
-![image](https://gojaebeom.github.io/images/servlet/example04.png)
+### 문법
+- Attribute형식에서는 `${num}` 과 같이 사용.
+- Parameter형식에서는 `${param.num}` 과 같이 사용.

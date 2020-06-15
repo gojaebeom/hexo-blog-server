@@ -23,10 +23,7 @@ sidebar:
   right:
     sticky: true
 ---
-<sup># 해당 글은 개인적인 공부 내용을 정리하는 것을 목적으로 하고있습니다.</sup>
-<sup># 설명이 다소 부족하거나 중간 내용이 생략될 수 있습니다.</sup>
 
-## jsp 와 servlet 
 웹 어플리케이션에 배포된 jsp 페이지는 최초 클라이언트 요청이 들어올 때 servlet으로 변환된다.
 <!-- more -->
 
@@ -123,3 +120,6 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
 
 ## servlet 변환 과정
 ![image](https://gojaebeom.github.io/images/servlet/example04.png)
+
+<sup># 해당 글은 개인적인 공부 내용을 정리하는 것을 목적으로 하고있습니다.</sup>
+<sup># 설명이 다소 부족하거나 중간 내용이 생략될 수 있습니다.</sup>

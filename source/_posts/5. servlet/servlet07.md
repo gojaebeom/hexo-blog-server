@@ -2,7 +2,7 @@
 title: Jsp -> Servlet 변환
 
 thumbnail: images/servlet/thumbnail.png
-date: 2020-05-25 20:20:00
+date: 2020-06-07 20:20:00
 
 tags: 
 - servlet
@@ -17,7 +17,7 @@ toc: true
 widgets:
   - type: toc
     position: right
-  - type: bgm
+  - type: category
     position: right
 sidebar:
   right:

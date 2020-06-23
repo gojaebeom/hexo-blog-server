@@ -2,7 +2,7 @@
 title: jsp 프로젝트 만들기 - DB 연결
 
 thumbnail: images/servlet/thumbnail.png
-date: 2020-05-27 20:20:00
+date: 2020-06-09 20:20:00
 
 tags: 
 - servlet
@@ -17,7 +17,7 @@ toc: true
 widgets:
   - type: toc
     position: right
-  - type: bgm
+  - type: category
     position: right
 sidebar:
   right:

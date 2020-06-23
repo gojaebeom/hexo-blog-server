@@ -2,7 +2,7 @@
 title: servlet 상태관리
 
 thumbnail: images/servlet/thumbnail.png
-date: 2020-05-24 20:20:00
+date: 2020-06-05 20:20:00
 
 tags: 
 - servlet
@@ -17,7 +17,7 @@ toc: true
 widgets:
   - type: toc
     position: right
-  - type: bgm
+  - type: category
     position: right
 sidebar:
   right:

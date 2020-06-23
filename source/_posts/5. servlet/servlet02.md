@@ -2,7 +2,7 @@
 title: 톰캣 사용하기
 
 thumbnail: images/servlet/thumbnail.png
-date: 2020-05-21 20:20:00
+date: 2020-06-02 20:20:00
 
 tags: 
 - servlet
@@ -18,7 +18,7 @@ toc: true
 widgets:
   - type: toc
     position: right
-  - type: bgm
+  - type: category
     position: right
 sidebar:
   right:

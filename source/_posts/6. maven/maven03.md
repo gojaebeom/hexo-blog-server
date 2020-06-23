@@ -2,7 +2,7 @@
 title: POM.xml
 
 thumbnail: images/maven/thumbnail.png
-date: 2020-06-05 19:00:00
+date: 2020-06-17 19:09:00
 
 tags: 
 - maven
@@ -16,7 +16,7 @@ toc: true
 widgets:
   - type: toc
     position: right
-  - type: bgm
+  - type: category
     position: right
 sidebar:
   right:

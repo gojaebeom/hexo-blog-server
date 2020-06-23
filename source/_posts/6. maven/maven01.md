@@ -2,7 +2,7 @@
 title: Maven을 알아보자
 
 thumbnail: images/maven/thumbnail.png
-date: 2020-06-01 19:09:00
+date: 2020-06-15 19:09:00
 
 tags: 
 - maven
@@ -16,7 +16,7 @@ toc: true
 widgets:
   - type: toc
     position: right
-  - type: bgm
+  - type: category
     position: right
 sidebar:
   right:

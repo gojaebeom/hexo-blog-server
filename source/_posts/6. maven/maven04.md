@@ -1,8 +1,8 @@
 ---
-title: war 파일 톰캣에 배포하기
+title: 생성부터 배포까지
 
 thumbnail: images/maven/thumbnail.png
-date: 2020-06-05 20:00:00
+date: 2020-06-18 19:09:00
 
 tags: 
 - maven
@@ -16,7 +16,7 @@ toc: true
 widgets:
   - type: toc
     position: right
-  - type: bgm
+  - type: category
     position: right
 sidebar:
   right:

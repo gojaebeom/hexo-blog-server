@@ -2,7 +2,7 @@
 title: jsp 프로젝트 만들기 - mvc1, mvc2
 
 thumbnail: images/servlet/thumbnail.png
-date: 2020-05-27 20:30:00
+date: 2020-06-10 20:20:00
 
 tags: 
 - servlet
@@ -17,7 +17,7 @@ toc: true
 widgets:
   - type: toc
     position: right
-  - type: bgm
+  - type: category
     position: right
 sidebar:
   right:

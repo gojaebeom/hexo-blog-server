@@ -2,7 +2,7 @@
 title: Servlet 다루기
 
 thumbnail: images/servlet/thumbnail.png
-date: 2020-05-22 20:20:00
+date: 2020-06-03 20:20:00
 
 tags: 
 - servlet
@@ -17,7 +17,7 @@ toc: true
 widgets:
   - type: toc
     position: right
-  - type: bgm
+  - type: category
     position: right
 sidebar:
   right:

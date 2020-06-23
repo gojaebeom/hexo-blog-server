@@ -2,7 +2,7 @@
 title: Maven 프로젝트 만들기
 
 thumbnail: images/maven/thumbnail.png
-date: 2020-06-04 19:09:00
+date: 2020-06-16 19:09:00
 
 tags: 
 - maven
@@ -16,7 +16,7 @@ toc: true
 widgets:
   - type: toc
     position: right
-  - type: bgm
+  - type: category
     position: right
 sidebar:
   right:

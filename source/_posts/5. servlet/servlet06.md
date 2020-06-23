@@ -2,7 +2,7 @@
 title: Jsp 프로그래밍
 
 thumbnail: images/servlet/thumbnail.png
-date: 2020-05-24 22:20:00
+date: 2020-06-06 20:20:00
 
 tags: 
 - servlet
@@ -17,7 +17,7 @@ toc: true
 widgets:
   - type: toc
     position: right
-  - type: bgm
+  - type: category
     position: right
 sidebar:
   right:

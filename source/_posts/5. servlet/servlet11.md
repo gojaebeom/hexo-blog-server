@@ -64,3 +64,6 @@ sidebar:
 6. 컨테이너는 `service()` 메소드를 호출하여 POST, GET 여부에 따라 `doGet()` 또는 `doPost()` 메서드가 호출됨
 7. `doGet()`, `doPost()`등의 메서드는 동적인 페이지를 생성 후 `HttpServletResponse`을 호출
 8. 응답을 주고 `HttpServletRequest`, `HttpServletResponse` 객체 소멸
+
+<sup># 해당 글은 개인적인 공부 내용을 정리하는 것을 목적으로 하고있습니다.</sup>
+<sup># 설명이 다소 부족하거나 중간 내용이 생략될 수 있습니다.</sup>

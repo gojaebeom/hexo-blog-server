@@ -5,7 +5,7 @@ thumbnail: images/spring/thumbnail.png
 date: 2020-06-22 23:27:00
 
 tags: 
-- maven
+- spring
 
 category:
 - 자바 튜토리얼

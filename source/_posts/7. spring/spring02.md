@@ -2,10 +2,12 @@
 title: 제어역전과 의존성 주입
 
 thumbnail: images/spring/thumbnail.png
-date: 2020-06-23 23:27:00
+date: 2020-06-23 21:00:00
 
 tags: 
-- maven
+- spring
+- IOC
+- DI
 
 category:
 - 자바 튜토리얼
